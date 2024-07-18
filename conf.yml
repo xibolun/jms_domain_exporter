@@ -1,0 +1,9 @@
+# jms token
+jms_token: {{jms_token}}
+# jms_addr
+jms_addr: {{jms_addr}}
+# check gateway interval second
+interval: 10
+# dial timeout second
+dial_timeout: 3
+http_port: 8080
