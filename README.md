@@ -2,8 +2,9 @@
 
 ## Quick start
 ```
-curl -sSL https://github.com/xibolun/jms_domain_exporter/install.sh | bash
+curl -LO https://raw.githubusercontent.com/xibolun/jms_domain_exporter/main/install.sh && bash install.sh
 ```
+install.sh will install jms_domain_exporter at /opt/jms_domain_exporter
 
 ## Build By Yourself
 1. `make build` you will get a binary file jms_domain_exporter.
