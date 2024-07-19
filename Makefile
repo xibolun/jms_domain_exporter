@@ -13,7 +13,7 @@ all: build
 
 # 编译可执行文件
 build:
-	$(GO) build -o $(BINARY_NAME) $(SOURCES)
+	@GOOS=linux GOARCH=amd64 $(GO) build -o $(BINARY_NAME) $(SOURCES)
 
 # 运行可执行文件
 run:
