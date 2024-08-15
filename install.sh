@@ -32,4 +32,16 @@ EOF
 
 echo "Installation completed successfully."
 
-$INSTALL_DIR/jms_domain_exporter -c $INSTALL_DIR/config.yml
+if command -v "supervisorctl" &> /dev/null; then
+cat << EOF > /etc/supervisord/jms_domain_exporter.conf
+[program:jms_domain_exporter]
+directory=/opt/jms_domain_exporter
+command=/opt/jms_domain_exporter/jms_domain_exporter -c /opt/jms_domain_exporter/config.yml
+autostart=true
+autorestart=true
+user=root
+EOF
+  supervisorctl update jms_domain_exporter
+else
+  $INSTALL_DIR/jms_domain_exporter -c $INSTALL_DIR/config.yml
+fi
